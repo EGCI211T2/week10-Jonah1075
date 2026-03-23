@@ -7,16 +7,24 @@ using namespace std;
 
 int main(){
 
-    struct Time t1,t2,t3;
+    Time t1,t2,t3;
+    t1.set_time(5,30,0);
+    t2.set_time(6,45,0);
+    t3 = t2.subtract(t1);
 
-    cout<<"What time was it?";
-    getTime(t1);
+    t1.display();
+    t2.display();
+    t3.display();
 
-    cout<<"What time is it now?";
-    getTime(t2);
+    cout<<"What time was it?\n";
+    t1.get_time();  
+
+    cout<<"What time is it now?\n";
+    t2.get_time(); 
     
-    t3=subtract(t2,t1); //t3=t2-t1
+    t3 = t2.subtract(t1);
     cout<<"Time diff is ";
+    t3.display();
 
-    display(t3);
+    return 0;
 }
